@@ -9,7 +9,12 @@
  http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<bean name="emp" class="com.samples.S01springcoredi.Employee"
-		p:id="22" p:name="williams" />
+		p:id="22" p:name="williams">
+		<property name="address">
+			<bean class="com.samples.S01springcoredi.Address"
+				p:houseNumber="123" p:street="main street" p:city="NY" />
+		</property>
+	</bean>
 
 	<bean name="hospital" class="com.samples.S01springcoredi.Hospital">
 		<property name="name" value="Global Hospitals" />
@@ -44,9 +49,17 @@
 			</map>
 		</property>
 	</bean>
-	<bean name="items" class="com.samples.S01springcoredi.Item" p:id="10" p:name="Soap" p:price="100" p:quantity="5" />
-	
-	<bean name="shoppingcart" class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="items"/>
-	
+	<bean name="items" class="com.samples.S01springcoredi.Item"
+		p:id="10" p:name="Soap" p:price="100" p:quantity="5" />
+
+	<bean name="shoppingcart"
+		class="com.samples.S01springcoredi.ShoppingCart" p:item-ref="items" />
+
+	<bean name="patient" class="com.samples.S01springcoredi.Patient"
+		p:id="11" />
+
+	<bean
+		class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor">
+	</bean>
 
 </beans>

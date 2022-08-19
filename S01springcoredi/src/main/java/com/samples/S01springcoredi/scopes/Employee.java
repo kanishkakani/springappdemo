@@ -1,11 +1,10 @@
-package com.samples.S01springcoredi;
+package com.samples.S01springcoredi.scopes;
 
 import org.springframework.beans.factory.annotation.Required;
 
 public class Employee {
 	private int id;
 	private String name;
-
 	private Address address;
 
 	public int getId() {
